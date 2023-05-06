@@ -48,3 +48,27 @@ func (rec *Repository) About(w http.ResponseWriter, r *http.Request) {
 		StringMap: stringMap,
 	})
 }
+
+// Generals is the generals page handler
+func (rec *Repository) Generals(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "generals.tmpl.html", &models.TemplateData{
+	})
+}
+
+// Majors is the majorss page handler
+func (rec *Repository) Majors(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "majors.tmpl.html", &models.TemplateData{
+	})
+}
+
+// Availability search for room availability
+func (rec *Repository) Availability(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "search-availability.tmpl.html", &models.TemplateData{
+	})
+}
+
+// Availability search for room availability
+func (rec *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "contact.tmpl.html", &models.TemplateData{
+	})
+}
