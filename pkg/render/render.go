@@ -76,13 +76,13 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 			return myCache, err
 		}
 		//get any layout files
-		layouts, err := filepath.Glob("./templates/*.layout.tmpl")
+		layouts, err := filepath.Glob("./templates/*.layout.html")
 		if err != nil {
 			return myCache, err
 		}
 		//if we have any in the directory add then all to the template set
 		if len(layouts) > 0 {
-			tmplset, err = tmplset.ParseGlob("./templates/*.layout.tmpl")
+			tmplset, err = tmplset.ParseGlob("./templates/*.layout.html")
 			if err != nil {
 				return myCache, err
 			}

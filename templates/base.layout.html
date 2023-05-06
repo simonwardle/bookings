@@ -110,32 +110,8 @@
 
     <script>
         let attention = Prompt();
-        document.getElementById("colorButton").addEventListener("click", function () {
-            let html = `
-                    <form id="check-availability-form" action="" method="post" novalidate class="needs-validation search-form">
-                        <div class="row">
-                            <div class="col">
-                                <div class="d-flex flex-row" id="reservation-dates-modal">
-                                    <div class="p-1">
-                                        <input required class="form-control" type="text" name="start" id="start" placeholder="Arrival" autocomplete="off">
-                                    </div>
-                                    <div class="p-1">
-                                        <input required class="form-control" type="text" name="end" id="end" placeholder="Departure" autocomplete="off">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-                    </form >
-                `
-            attention.custom({ msg: html, title: 'Choose your dates' });
-        })
+        
 
-        const elem = document.getElementById('reservation-dates');
-        const rangepicker = new DateRangePicker(elem, {
-            todayButton: true,
-            clearButton: true,
-            format: 'dd/mm/yyyy'
-        });
 
         function notify(msgType, msg) {
             notie.alert({

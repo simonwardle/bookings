@@ -72,3 +72,9 @@ func (rec *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "contact.tmpl.html", &models.TemplateData{
 	})
 }
+
+// Reservation capture client details
+func (rec *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "make-reservation.tmpl.html", &models.TemplateData{
+	})
+}
