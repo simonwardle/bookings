@@ -13,7 +13,8 @@ import (
 )
 
 const portNumber = ":8080"
-//declare here so it is available to entire main package
+
+// declare here so it is available to entire main package
 var app config.AppConfig
 var session *scs.SessionManager
 
@@ -30,7 +31,7 @@ func main() {
 	session.Cookie.Secure = app.InProduction
 
 	app.Session = session
-	
+
 	app.UseTemplateCache = false
 
 	//populate app config template cache via render package
@@ -48,7 +49,7 @@ func main() {
 	_, _ = fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
 
 	srv := http.Server{
-		Addr: portNumber,
+		Addr:    portNumber,
 		Handler: routes(&app),
 	}
 

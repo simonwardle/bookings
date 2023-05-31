@@ -186,14 +186,9 @@
                     showCancelButton: true,
                     confirmButtonColor: '#0d6efd',
                     willOpen: () => {
-                        const elem = document.getElementById('reservation-dates-modal');
-                        const rp = new DateRangePicker(elem, {
-                            todayButton: true,
-                            clearButton: true,
-                            showOnFocus: false,
-                            orientation: 'top',
-                            format: 'dd/mm/yyyy'
-                        });
+                        if(c.willOpen !== undefined){
+                            c.willOpen();
+                        }
                     },
                     preConfirm: () => {
                         return [
