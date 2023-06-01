@@ -8,8 +8,8 @@ import (
 	"text/template"
 
 	"github.com/justinas/nosurf"
-	"github.com/simonwardle/bookings/pkg/config"
-	"github.com/simonwardle/bookings/pkg/models"
+	"github.com/simonwardle/bookings/internal/config"
+	"github.com/simonwardle/bookings/internal/models"
 )
 
 var app *config.AppConfig
