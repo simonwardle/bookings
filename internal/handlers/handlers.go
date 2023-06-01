@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/simonwardle/bookings/internal/config"
+	"github.com/simonwardle/bookings/internal/forms"
 	"github.com/simonwardle/bookings/internal/models"
 	"github.com/simonwardle/bookings/internal/render"
 )
@@ -102,5 +103,12 @@ func (rec *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 
 // Reservation capture client details
 func (rec *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "make-reservation.tmpl.html", &models.TemplateData{})
+	render.RenderTemplate(w, r, "make-reservation.tmpl.html", &models.TemplateData{
+		Form: forms.New(nil),
+	})
+}
+
+// PostReservation handles the posting of a reservation form
+func (rec *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
+
 }
